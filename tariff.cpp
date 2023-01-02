@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include "tariff.h"
-
+//Work in progress
 void printBill(double units, Tariff belowThres, Tariff aboveThres)
 {
 
@@ -29,7 +29,10 @@ int main(void)
             if(prevKey < units)
             {
                 diff = units - prevKey;
+                if(diff > key)
+                    diff = key;
                 totalBill = totalBill + value * diff;
+                std::cout<<totalBill<<std::endl;
                 prevKey = key;
             }
             else
